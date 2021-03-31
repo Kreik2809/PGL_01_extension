@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #0E2439;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.app1.NotifController">
+   <center>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="460.0" style="-fx-border-color: #F3CB83; -fx-border-radius: 20px; -fx-border-width: 4px;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="288.4000305175781" minHeight="10.0" prefHeight="64.20001831054685" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="304.199991607666" minHeight="10.0" prefHeight="294.5999816894531" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="178.00000610351563" minHeight="10.0" prefHeight="86.79999389648441" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="deleteButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#deleteClicked" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: RED; -fx-background-radius: 20px;" text="Supprimer" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="80.0" top="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="acceptButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#acceptClicked" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: RED; -fx-background-radius: 20px;" text="Accepter" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="80.0" top="30.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <ListView fx:id="invitations" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0E2439; -fx-background-radius: 20px; -fx-border-color: #F3CB83;" GridPane.rowIndex="1" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Vos invitations" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

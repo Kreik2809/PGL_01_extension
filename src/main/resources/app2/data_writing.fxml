@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="450.0" prefWidth="500.0" style="-fx-background-color: #0E2439;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.app2.WriteDataController">
+   <center>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" style="-fx-background-color: #0E2439; -fx-border-color: #F3CB83; -fx-border-width: 3px; -fx-border-radius: 10px;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="284.8000122070313" minHeight="10.0" prefHeight="276.8000122070313" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="124.79999999999998" minHeight="1.5999877929687045" prefHeight="26.399987792968773" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="62.00001220703126" minHeight="0.0" prefHeight="46.20001220703125" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" underline="true">
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Text>
+                  <HBox prefHeight="40.0" prefWidth="394.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial Black" size="10.0" />
+                           </font>
+                        </Text>
+                        <DatePicker fx:id="datePicker" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="394.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Consommation (kwh/m3) :">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <TextField fx:id="valueField" prefHeight="13.0" prefWidth="102.0">
+                           <HBox.margin>
+                              <Insets left="5.0" top="2.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" onMouseClicked="#addButtonClicked" style="-fx-background-color: WHITE; -fx-background-radius: 10px;" text="Ajouter">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" top="2.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tableData" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0E2439;">
+                    <columns>
+                      <TableColumn fx:id="date" prefWidth="135.19997346401215" text="Date" />
+                      <TableColumn fx:id="conso" prefWidth="237.6000213623047" text="Consommation (kwh/m3)" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </VBox>
+            <Text fx:id="errorText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Mauvaise date" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Text>
+            <Button fx:id="confBtn" mnemonicParsing="false" onMouseClicked="#confirmButtonClicked" style="-fx-background-color: RED; -fx-background-radius: 10px;" text="Confirmer" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="50.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#cancelButtonClicked" style="-fx-background-color: RED; -fx-background-radius: 10px;" text="Annuler" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="50.0" />
+               </GridPane.margin>
+            </Button>
+            <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Consommation incorrectet" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

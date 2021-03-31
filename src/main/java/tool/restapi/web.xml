@@ -1,0 +1,224 @@
+<web-app>
+
+	<servlet>
+		<servlet-name>Users</servlet-name>
+		<servlet-class>tool.restapi.UsersServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Users</servlet-name>
+		<url-pattern>/User/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Portfolios</servlet-name>
+		<servlet-class>tool.restapi.PortfoliosServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Portfolios</servlet-name>
+		<url-pattern>/Portfolios/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Notifs</servlet-name>
+		<servlet-class>tool.restapi.NotificationsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Notifs</servlet-name>
+		<url-pattern>/Notifications/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SP</servlet-name>
+		<servlet-class>tool.restapi.MetersServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SP</servlet-name>
+		<url-pattern>/Meters/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Meter</servlet-name>
+		<servlet-class>tool.restapi.MeterServlet2</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Meter</servlet-name>
+		<url-pattern>/MetersU/*</url-pattern>
+	</servlet-mapping>
+	
+
+	<servlet>
+		<servlet-name>Contract</servlet-name>
+		<servlet-class>tool.restapi.ContractsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Contract</servlet-name>
+		<url-pattern>/Contracts/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Dsp</servlet-name>
+		<servlet-class>tool.restapi.DSPServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Dsp</servlet-name>
+		<url-pattern>/Dsp/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserByP</servlet-name>
+		<servlet-class>tool.restapi.UserPServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UserByP</servlet-name>
+		<url-pattern>/UserPortfolio/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>MeterByEAN</servlet-name>
+		<servlet-class>tool.restapi.MeterEANServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MeterByEAN</servlet-name>
+		<url-pattern>/MeterByEAN/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DataMeter</servlet-name>
+		<servlet-class>tool.restapi.DataMeterServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DataMeter</servlet-name>
+		<url-pattern>/MeterData/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ProductionT</servlet-name>
+		<servlet-class>tool.restapi.ProductionsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ProductionT</servlet-name>
+		<url-pattern>/Productions/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>GCByID</servlet-name>
+		<servlet-class>tool.restapi.GreenCertificateByIDServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GCByID</servlet-name>
+		<url-pattern>/GreenCertificateByID/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>GCByMeter</servlet-name>
+		<servlet-class>tool.restapi.GreenCertificateByEANServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GCByMeter</servlet-name>
+		<url-pattern>/GreenCertificateByEAN/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>GCByRID</servlet-name>
+		<servlet-class>tool.restapi.GreenCertificateByRIDServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GCByRID</servlet-name>
+		<url-pattern>/GreenCertificateByRID/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Date</servlet-name>
+		<servlet-class>tool.restapi.DateServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Date</servlet-name>
+		<url-pattern>/Date/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ContractSupplier</servlet-name>
+		<servlet-class>tool.restapi.ContractServlet2</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ContractSupplier</servlet-name>
+		<url-pattern>/ContractsSupplier/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>allmeter</servlet-name>
+		<servlet-class>tool.restapi.MetersServlet3</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>allmeter</servlet-name>
+		<url-pattern>/AllMeters/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>contractID</servlet-name>
+		<servlet-class>tool.restapi.ContractIDServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>contractID</servlet-name>
+		<url-pattern>/ContractID/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>historySupplyPoint</servlet-name>
+		<servlet-class>tool.restapi.HistorySupplyPointServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>historySupplyPoint</servlet-name>
+		<url-pattern>/HistorySupplyPoint/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>PortfoliosID</servlet-name>
+		<servlet-class>tool.restapi.PortfolioIDServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>PortfoliosID</servlet-name>
+		<url-pattern>/PortfolioID/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ContractbyID</servlet-name>
+		<servlet-class>tool.restapi.ContractServlet3</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ContractbyID</servlet-name>
+		<url-pattern>/ContractsID/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DelNotifs</servlet-name>
+		<servlet-class>tool.restapi.DelNotifServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DelNotifs</servlet-name>
+		<url-pattern>/DelNotif/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>

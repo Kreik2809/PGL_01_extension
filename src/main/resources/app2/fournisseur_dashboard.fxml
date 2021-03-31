@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="mainPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #0E2439;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.app2.DashBoardFController">
+   <children>
+      <VBox layoutX="-1.0" layoutY="1.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+         <children>
+            <MenuBar maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefWidth="800.0" VBox.vgrow="ALWAYS">
+              <menus>
+                  <Menu mnemonicParsing="false" text="Gestion">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#getDataClicked" text="Récupération de données" />
+                        <MenuItem mnemonicParsing="false" onAction="#addDataClicked" text="Importation de données" />
+                         <MenuItem mnemonicParsing="false" onAction="#modifDataClicked" text="Modification/ajout de données" />
+                        <MenuItem mnemonicParsing="false" onAction="#delDataClicked" text="Suppression de données" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Paramètres">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#changePwdClicked" text="Changer le mot de passe" />
+                        <Menu mnemonicParsing="false" text="Changer la langue">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#chooseFrench" text="Français" />
+                              <MenuItem mnemonicParsing="false" onAction="#chooseEnglish" text="English" />
+                          </items>
+                        </Menu>
+                     </items>
+                  </Menu>
+              </menus>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="-1.0" />
+               </padding>
+            </MenuBar>
+            <HBox maxWidth="1.7976931348623157E308" prefWidth="800.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label text="Rechercher un code EAN :" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="researchField" prefHeight="26.0" prefWidth="445.0" promptText="Veuillez entrer un code ean" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onMouseClicked="#researchClicked" style="-fx-background-color: WHITE; -fx-background-radius: 10px;" text="Rechercher">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="50.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="497.60003662109375" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="500.0" minWidth="10.0" prefWidth="302.39996337890625" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane gridLinesVisible="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="58.800018310546875" minHeight="10.0" prefHeight="49.40000610351562" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="360.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="46.0" minHeight="5.000006103515659" prefHeight="42.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Compteurs actuellement ouverts :" underline="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="Arial Black" size="14.0" />
+                           </font>
+                        </Text>
+                        <GridPane style="-fx-border-color: #F3CB83;" GridPane.rowIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <GridPane.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </GridPane.margin>
+                           <children>
+                              <TableView fx:id="tableOpenedCounter" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0E2439;" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="openName" prefWidth="94.40003263950348" text="Nom" />
+                                  <TableColumn fx:id="openEan" prefWidth="123.20000457763672" text="Code EAN" />
+                                    <TableColumn fx:id="openDate" prefWidth="107.99996948242188" text="Date d'ouverture" />
+                                    <TableColumn fx:id="openClient" prefWidth="74.39996337890625" text="Client" />
+                                    <TableColumn fx:id="openType" prefWidth="72.800048828125" text="Type" />
+                                    <TableColumn fx:id="openContract" prefWidth="72.800048828125" text="Contrat" />
+                                </columns>
+                                 <GridPane.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </GridPane.margin>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </GridPane>
+                        <Button mnemonicParsing="false" onMouseClicked="#closeMeterClicked" style="-fx-background-color: RED; -fx-background-radius: 15px;" text="Fermer un compteur" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+                  <GridPane gridLinesVisible="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="58.800018310546875" minHeight="10.0" prefHeight="49.600006103515625" vgrow="ALWAYS" />
+                      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="360.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="46.0" minHeight="5.000006103515659" prefHeight="41.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Compteurs actuellement fermés" underline="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="Arial Black" size="14.0" />
+                           </font>
+                        </Text>
+                        <GridPane style="-fx-border-color: #F3CB83;" GridPane.rowIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <GridPane.margin>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </GridPane.margin>
+                           <children>
+                              <TableView fx:id="tableClosedCounter" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0E2439;" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="closeName" prefWidth="92.00000441074371" text="Nom" />
+                                  <TableColumn fx:id="closeEan" prefWidth="112.00006103515625" text="Code EAN" />
+                                    <TableColumn fx:id="closeType" prefWidth="73.59996032714844" text="Type" />
+                                </columns>
+                                 <GridPane.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </GridPane.margin>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </GridPane>
+                        <Button mnemonicParsing="false" onMouseClicked="#openMeterClicked" style="-fx-background-color: RED; -fx-background-radius: 15px;" text="Ouvrir un compteur" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

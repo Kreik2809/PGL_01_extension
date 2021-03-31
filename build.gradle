@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+group 'umons.ac.be'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation('junit:junit:4.13')
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
+    runtime "mysql:mysql-connector-java:8.0.15"
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.12.0'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.12.0'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.0'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.12.0'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.0'
+    implementation 'org.json:json:20171018'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+    compile 'javax.mail:mail:1.4.7'
+    compile 'javax.servlet:javax.servlet-api:3.0.1'
+}
+
+javadoc {
+    options.encoding = 'UTF-8'
+    options.addStringOption('Xdoclint:none', '-quiet')
+    destinationDir= file("$rootDir/javadoc")
+}
+
+javafx {
+    version = '11.0.2'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+mainClassName = 'RunAPP1'
+
+task runAPP1(type : JavaExec){
+    description = "lance l'app 1"
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+    main = 'RunAPP1'
+}
+
+task runAPP2(type : JavaExec){
+    description = "lance l'app 2"
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+    main = 'RunAPP2'
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #0E2439;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.app1.AddUserController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="135.1999938964844" minHeight="10.0" prefHeight="135.1999938964844" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="76.00000610351563" minHeight="10.0" prefHeight="22.400006103515608" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="92.79999389648438" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Email de l'utilisateur :" GridPane.valignment="TOP">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="10.0" top="10.0" />
+         </GridPane.margin>
+      </Text>
+      <TextField fx:id="nameField" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets left="10.0" right="10.0" top="35.0" />
+         </GridPane.margin>
+      </TextField>
+      <Text fx:id="errorText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Aucun utilisateur trouvé" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Text>
+      <Button fx:id="addButton" mnemonicParsing="false" onMouseClicked="#addButtonClicked" style="-fx-background-color: RED; -fx-background-radius: 10px;" text="Ajouter" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+         <GridPane.margin>
+            <Insets right="50.0" />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="cancelButton" mnemonicParsing="false" onMouseClicked="#cancelButtonClicked" style="-fx-background-color: RED; -fx-background-radius: 10px;" text="Annuler" textFill="WHITE" GridPane.rowIndex="2">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+         <opaqueInsets>
+            <Insets left="50.0" />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets left="50.0" />
+         </GridPane.margin>
+      </Button>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Niveau d'accès :">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="10.0" top="20.0" />
+         </GridPane.margin>
+      </Text>
+      <ChoiceBox fx:id="access" prefWidth="150.0">
+         <GridPane.margin>
+            <Insets left="10.0" top="80.0" />
+         </GridPane.margin>
+      </ChoiceBox>
+   </children>
+</GridPane>
