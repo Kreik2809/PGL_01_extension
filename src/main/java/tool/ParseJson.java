@@ -1,6 +1,7 @@
 package tool;
 
 import org.json.JSONObject;
+import org.json.JSONException;
 
 import java.util.ArrayList;
 
@@ -53,12 +54,16 @@ public abstract class ParseJson
             }
         }
 
-
-        for(String o : objects) {
-            JSONObject jsonObject = new JSONObject(o);
-            for (int j = 0; j < rows.length; j++)
-                results.add((String) jsonObject.get(rows[j]));
+        try{
+            for(String o : objects) {
+                JSONObject jsonObject = new JSONObject(o);
+                for (int j = 0; j < rows.length; j++)
+                    results.add((String) jsonObject.get(rows[j]));
+            }
+        } catch(JSONException e){
+            
         }
+        
 
         return results;
     }
